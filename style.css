@@ -1,0 +1,274 @@
+/* Mengimpor font Poppins dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+/* Mengatur styling dasar untuk semua elemen */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Mengatur ukuran font dasar untuk halaman (10px sebagai basis) */
+html{
+    font-size: 62.5%;
+}
+
+/* Mengatur styling dasar untuk body */
+body{
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: white;
+    color: black;
+}
+
+/* Styling untuk header di bagian atas halaman */
+header {
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: transparent;
+    filter: drop-shadow(10px);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 100;
+}
+
+/* Styling untuk link navigasi di header */
+nav a{
+    font-size: 1.8rem;
+    color: black;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+/* Styling link navigasi saat hover atau dalam keadaan aktif */
+nav a:hover,
+nav a.active{
+    color: #2a22c6;
+    border-bottom: 3px solid #2a22c6;
+}
+
+/* Styling untuk navigasi pada layar kecil (max-width: 995px) */
+@media(max-width:995px){
+    nav{
+        position: absolute;
+        display: none;
+        top: 0;
+        right: 0;
+        width: 40%;
+        border-left: 3px solid #2a22c6;
+        border-bottom: 3px solid #2a22c6;
+        border-bottom-left-radius: 2rem;
+        padding: 1rem solid;
+        background-color: white;
+        border-top: 0.1rem solid whitesmoke;
+    }
+
+    /* Tampilkan menu navigasi saat class active ditambahkan */
+    nav.active{
+        display: block;
+    }
+
+    /* Mengatur ukuran dan margin link navigasi */
+    nav a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    /* Styling link navigasi saat hover atau aktif */
+    nav a:hover,
+    nav a.active{
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid #2a22c6;
+    }
+}
+
+/* Styling dasar untuk setiap section halaman */
+section{
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+}
+
+/* Styling untuk section home */
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background-color: white;
+}
+
+
+
+/* Styling warna untuk teks berwarna */
+span{
+    color: #2a22c6;
+}
+
+/* Styling untuk subjudul di bagian home */
+.home-content h3{
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+/* Styling paragraf di bagian home */
+.home-content p{
+    font-size: 1.6rem;
+}
+
+/* Styling untuk gambar profil */
+.home-img{
+    border-radius: 50%;
+}
+
+/* Styling untuk gambar profil beserta animasi saat hover */
+.home-img img{
+    position: relative;
+    width: 32vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px solid #2a22c6;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.home-img img:hover{
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+/* Styling untuk ikon sosial media */
+.social-icons a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: 0.2rem solid #2a22c6;
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+    color: #2a22c6;
+}
+
+/* Animasi hover untuk ikon sosial media */
+.social-icons a:hover{
+    color: white;
+    transform: scale(1.3) translateY(-5px);
+    background-color: #2a22c6;
+    box-shadow: 0  0 25px #2a22c6;
+}
+
+/* Styling untuk tombol */
+.btn{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: white;
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: #2a22c6;
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    border: 2px solid #2a22c6;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+/* Efek hover untuk tombol */
+.btn:hover{
+    transform: scale3d(1.03);
+    background-color: #2a22c6;
+    color: white;
+    box-shadow: 0 0 25px #2a22c6;
+}
+
+/* Styling untuk teks efek mengetik */
+.typing-text{
+    font-size: 10px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+/* Styling warna teks dalam efek mengetik */
+.typing-text span{
+    position: relative;
+}
+
+/* Efek mengetik kata */
+.typing-text span::before{
+    content: "Muhammad Afiq";
+    color: #2a22c6;
+    animation: words 10s infinite;
+}
+
+/* Efek kursor untuk teks mengetik */
+.typing-text span::after{
+    content: "";
+    background-color: white;
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid white;
+    right: -8;
+    animation: cursor 0.6s infinite;
+}
+
+/* Keyframes animasi kursor */
+@keyframes cursor{
+    to{
+        border-left: 3px solid #2a22c6;
+    }
+}
+
+/* Keyframes animasi perubahan teks */
+@keyframes words{
+    0%, 50%{
+        content: "Muhammad Afiq";
+    }
+    51%, 100%{
+        content: "M Afiq Mirza Choiruzan";
+    }
+}
+
+/* Responsivitas untuk ukuran layar di bawah 1000px */
+@media (max-width: 1000px){
+    .home{
+        gap: 4rem;
+    }
+}
+
+/* Responsivitas untuk ukuran layar di bawah 995px */
+@media(max-width:995px){
+    .home{
+        flex-direction: column;
+        margin: 5rem 4rem;
+    }
+
+    .home .home-content h3{
+        font-size: 2.5rem;
+    }
+
+    .home-content h1{
+        font-size: 5rem;
+    }
+
+    .home-img img{
+        width: 70vw;
+        margin-top: 4rem;
+    }
+}
